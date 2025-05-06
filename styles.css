@@ -1,0 +1,68 @@
+/* Type selector - styles all body text */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Class selector - for special emphasis */
+.highlight {
+    color: rgb(0, 120, 212);
+    font-weight: bold;
+}
+
+/* Relational selector - style all li inside ul */
+ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Combination selector - style h1 inside main */
+main h1 {
+    color: #0078d4;
+    font-size: 2.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Attribute selector - style links that open in new tab */
+a[target="_blank"] {
+    color: #005fa3;
+    text-decoration: underline dotted;
+}
+
+/* Pseudo class - style links on hover */
+a:hover {
+    color: rgb(255, 94, 77);
+}
+
+/* Pseudo element - add a line before footer */
+footer::before {
+    content: "";
+    display: block;
+    height: 0.2rem;
+    width: 100%;
+    background: #0078d4;
+    margin-bottom: 1rem;
+}
+
+/* Style the foot */
+footer {
+    text-align: center;
+    font-size: 1rem;
+    color: #444;
+    padding: 1rem 0;
+    background: #e6eef7;
+    margin-top: 2rem;
+}
+
+/* responsiv image */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.08);
+}
