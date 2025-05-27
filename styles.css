@@ -1,117 +1,163 @@
-/* Add a border to the main element */
-main {
-    border: 3px dashed #0078d4;
-    padding: 1.5rem;
-    background-color: white;
-    border-radius: 1rem;
-    margin: 2rem auto;
+/* Reset default margins and padding */
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-/* Type selector - styles all body text */
+/* Base typography & background */
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(to bottom right, #f0f4f8, #dbe9f1);
-    color: #222;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(to bottom right, #f0f4f8, #dbe9f1);
+  color: #222;
+  line-height: 1.6;
 }
 
-/* Class selector - for special emphasis */
-.highlight {
-    color: rgb(0, 120, 212);
-    font-weight: bold;
+/* Header color */
+header {
+  background: #0078d4;
 }
 
-/* 3-column layout for test page */
+/* Nav: center links in a row */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Nav links */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile nav: stack vertically */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Main content wrapper */
+main {
+  background: white;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  border: 3px dashed #0078d4;
+  border-radius: 1rem;
+  min-height: 60vh;
+}
+
+/* Utility: center certain paragraphs */
+.cta {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+main img {
+  display: block;
+  margin: 2rem auto;
+}
+
+/* Center the “Features” heading */
+#features {
+  text-align: center;
+}
+
+/* Features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+.features-grid li {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
+}
+
+/* Test-Sites page: three cards centered */
 .columns {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  margin: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
 }
-
 .columns section {
   flex: 1;
   min-width: 250px;
+  background: white;
   padding: 1rem;
-  background-color: white;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
 }
 
-/* Relational selector - style all li inside ul */
-ul li {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+/* Extra “About” box */
+.extra-content {
+  background: white;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 800px;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.1);
 }
 
-/* Combination selector - style h1 inside main */
-main h1 {
-    color: #0078d4;
-    font-size: 2.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-}
+/* Small helper styles */
+.highlight { color: #0078d4; font-weight: bold; }
+main h1 { color: #0078d4; font-size: 2.2rem; margin: 1.5rem 0 1rem; }
+a[target="_blank"] { text-decoration: underline dotted; color: #005fa3; }
 
-/* Attribute selector - style links that open in new tab */
-a[target="_blank"] {
-    color: #005fa3;
-    text-decoration: underline dotted;
-}
-
-/* Pseudo class - style links on hover */
-a:hover {
-    color: rgb(255, 94, 77);
-}
-
-/* Pseudo element - add a line before footer */
+/* Footer line & text */
 footer::before {
-    content: "";
-    display: block;
-    height: 0.2rem;
-    width: 100%;
-    background: #0078d4;
-    margin-bottom: 1rem;
+  content: "";
+  display: block;
+  height: 0.2rem;
+  background: #0078d4;
+  margin-bottom: 1rem;
 }
-
-/* Style the footer */
 footer {
-    text-align: center;
-    font-size: 1rem;
-    color: #444;
-    padding: 1rem 0;
-    background: #e6eef7;
-    margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+  padding: 1rem 0;
+  background: #e6eef7;
+  margin-top: 2rem;
 }
 
-/* Responsive image */
-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.2rem 0.8rem rgba(0,0,0,0.08);
-}
-
-/* Responsive: stack columns on small screens */
+/* Stack test sites vertically on tablets */
 @media (max-width: 800px) {
   .columns {
     flex-direction: column;
+    align-items: center;
   }
   main {
-    padding: 1rem;
     margin: 1rem;
+    padding: 1rem;
   }
 }
 
-/* Responsive: smaller font and image on very small screens */
+#about-top,
+#contact,
+#contact + p,
+#contact + p + p {
+  text-align: center;
+}
+
+/* Smaller text & images on phones */
 @media (max-width: 500px) {
-  body {
-    font-size: 0.95rem;
-  }
-  img {
-    width: 100%;
-    max-width: 250px;
-  }
+  body { font-size: 0.95rem; }
+  img  { max-width: 250px; }
 }

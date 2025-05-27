@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Highlight Unlocker - Chrome Extension</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Highlight Unlocker – Home</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="test-sites.html">Test Sites</a>
-            <a href="about.html">About Me</a>
-        </nav>
-    </header>
-    <main>
-        <!-- my little introduction section -->
-        <h1>Highlight Unlocker: Bypass Text Restrictions</h1>
+  <!-- Navigation Bar (Flex Container #1) -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="test-sites.html">Test Sites</a>
+      <a href="about.html">About Me</a>
+    </nav>
+  </header>
 
-        <p>
-            Have you ever been blocked from copying text on websites?
-            Highlight Unlocker removes those restrictions and lets you select and copy text freely.
-            It's simple, lightweight, and easy to use!
-        </p>
+  <main>
+    <h1>Highlight Unlocker: Bypass Text Restrictions</h1>
+    <p>
+      Have you ever been blocked from copying text on websites?
+      Highlight Unlocker removes those restrictions so you can select and copy
+      freely—simple, lightweight, and easy to use!
+    </p>
+    <p><a href="#features">Jump to Features</a></p>
 
-        <!-- same-page anchor link -->
-        <p><a href="#features">Jump to Features</a></p>
-        <!-- features list in bullet points -->
-        <h2 id="features">Features</h2>
-        <ul>
-            <li>Unlocks restricted text selection</li>
-            <li>Works on a variety of websites</li>
-            <li>Easy to activate and deactivate</li>
-        </ul>
+    <!-- Grid Component (Features List) -->
+    <h2 id="features">Features</h2>
+    <ul class="features-grid">
+      <li>Unlocks restricted text selection</li>
+      <li>Works on a variety of websites</li>
+      <li>Easy to activate and deactivate</li>
+    </ul>
 
-        <!-- link to test sites -->
-        <p>
-            <a href="test-sites.html">See websites you can test this extension on</a>
-        </p>
+    <p class="cta">
+    <a href="test-sites.html">See websites you can test this extension on</a>
+    </p>
+    <p class="cta">
+    Download it from the
+    <a href="…chromewebstore…" target="_blank">Chrome Web Store</a>
+    today!
+    </p>
 
-        <!-- links to the chrome webstore of my extension I made -->
-        <p>
-            You can download Highlight Unlocker from the
-            <a href="https://chromewebstore.google.com/detail/highlight-unlocker-bypass/lbhdidfmmoeelcbjpmhalaainfcjdlgo"
-                target="_blank">
-                Chrome Web Store
-            </a> today!
-        </p>
 
-        <!-- my background image that I made that was for the chrome extension web view page. -->
-        <img src="Images/backgroundpic.png"
-            alt="A browser window showing the Highlight Unlocker extension with a highlighted text example under the title 'Easy to Use'."
-            width="500">
+    <!-- Extra content so page is at least one viewport high -->
+    <section class="extra-content">
+      <h2>About Highlight Unlocker</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
+        lacus sed sapien gravida volutpat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nec
+        tincidunt tellus.
+      </p>
+    </section>
 
-    </main>
+    <img src="Images/backgroundpic.png"
+         alt="Browser showing Highlight Unlocker in action"
+         width="500"/>
+  </main>
 
-    <footer>
-        <p>&copy; Maxim Denishchuk 2025</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Maxim Denishchuk</p>
+  </footer>
 </body>
-
 </html>
