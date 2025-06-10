@@ -3,46 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test Sites - Highlight Unlocker</title>
+  <title>Test Sites – Highlight Unlocker</title>
   <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts: Orbitron & DM Serif Text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="Images/favicon.png" type="image/png"/>
 </head>
 <body>
   <header>
     <nav>
       <a href="index.html">Home</a>
+      <a href="how-to-install.html">How to Install</a>
       <a href="test-sites.html">Test Sites</a>
-      <a href="about.html">About Me</a>
-    </nav>
+      <a href="about.html">About Me</a>    </nav>
   </header>
 
   <main class="columns">
+    <!-- ==== Section 1: Text-Highlight Block ==== -->
     <section>
-      <h2>Doesn't Allow Highlighting</h2>
+      <h2 class="blue-orbitron">Blocked by CSS Highlight Lock</h2>
+      <div class="img-pair">
+        <figure>
+          <img
+            src="Images/BeforeHighLighting.png"
+            alt="Before: Creepypasta story pages could not be selected"
+            class="test-img"
+          />
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="Images/AfterHighLighting.png"
+            alt="After: Highlight Unlocker restoring text selection on Creepypasta"
+            class="test-img"
+          />
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
       <p>
-        <a href="https://www.creepypasta.com/i-found-a-thumb-drive-in-my-basement/" target="_blank">
-          Creepypasta.com - Story Pages
-        </a><br/>
-        Try highlighting paragraphs — it blocks text selection with CSS.
+        <a
+          href="https://www.creepypasta.com/i-found-a-thumb-drive-in-my-basement/"
+          target="_blank"
+        >
+          Creepypasta.com – Story Pages
+        </a>
+        <br/>
+        This site disables selection via <code>user-select: none</code>
+        (and even blocks <code>onselectstart</code>).
+      </p>
+      <p>
+        Highlight Unlocker injects <code>user-select: text!important</code>
+        and removes those handlers so you can click-and-drag to highlight.
       </p>
     </section>
 
+    <!-- ==== Section 2: Clipboard-Clear Lock ==== -->
     <section>
-      <h2>Normal Behavior</h2>
-      <p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#syntax" target="_blank">
-          MDN Docs - `user-select` Syntax
-        </a><br/>
-        Site that showing how to use `user-select` property in CSS. It allows text selection.
-      </p>
-    </section>
-
-    <section>
-      <h2>Clipboard Lock</h2>
+      <h2 class="blue-orbitron">Blocked by Clipboard-Replace Script</h2>
+      <div class="img-pair">
+        <figure>
+          <img
+            src="Images/BeforeCopying.png"
+            alt="Before: ClassicIndustries site clearing clipboard on copy"
+            class="test-img"
+          />
+          <figcaption>Before</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="Images/AfterCopying.png"
+            alt="After: Highlight Unlocker preventing clipboard-clear on ClassicIndustries"
+            class="test-img"
+          />
+          <figcaption>After</figcaption>
+        </figure>
+      </div>
       <p>
         <a href="https://www.classicindustries.com/" target="_blank">
           ClassicIndustries.com
         </a><br/>
-        Try copying — it overrides clipboard with JavaScript and clears copied text.
+        This site installs a <code>copy</code>-event listener that replaces your selection with its own boilerplate text.
+      </p>
+      <p>
+        Highlight Unlocker intercepts that event, stops the site’s listener, and re-writes <em>your</em> highlighted text onto the clipboard.
       </p>
     </section>
   </main>
