@@ -2,7 +2,6 @@
 /* These classes let you use the fonts anywhere */
 .orbitron-title {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
 }
